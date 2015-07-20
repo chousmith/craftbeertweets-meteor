@@ -38,6 +38,7 @@ oh and if you are not wanting it any more there there you can
 
 in not much of any particular order
 
+* make the directory structure better for future use?
 * display the img below the text if there is an img
 * display user images
 * save the hashtags

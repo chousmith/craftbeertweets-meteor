@@ -1,7 +1,7 @@
 /**
  * craftbeertweets-angular Meteor app
  *
- * v0.0.1
+ * v0.1
  */
 
 Tweets = new Mongo.Collection("tweets");
@@ -40,13 +40,6 @@ if (Meteor.isClient) {
     });
 	}]);
 }
-/*
- * general Meteor.methods for the client & server
- * but right now there aren't any
-Meteor.methods({
-  // ...
-});
-*/
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
@@ -59,8 +52,6 @@ if (Meteor.isServer) {
       var stream = Twit.stream('statuses/filter', { track: 'craftbeer' })
 
       stream.on('tweet', Meteor.bindEnvironment( function(tweet) {
-        var tw_url = 'twitter.com/'+ tweet.user.screen_name +'/status/'+ tweet.id_str;
-        console.log( '** TWEET : '+ tw_url );
         var img = '';
         // check if tweet has media
         if ( tweet.entities.hasOwnProperty('media') ) {
@@ -73,18 +64,6 @@ if (Meteor.isServer) {
             }
           }
         }
-        /*
-        var hashtags = [];
-        // check for hashtags?
-        if ( tweet.entities.hasOwnProperty('hashtags') ) {
-          // if theyre there..
-          if ( tweet.entities.hashtags.length > 0 ) {
-            hashtags = tweet.entities.hashtags;
-            console.log(hashtags);
-            // like [{ text: 'craftbeer', indices: [ 51, 61 ] },...]
-          }
-        }
-        */
             
         Tweets.insert({
           user_id: tweet.user.id_str,
@@ -95,7 +74,7 @@ if (Meteor.isServer) {
           //hashtags: hashtags,
           img: img,
           origin_id: tweet.id_str,
-          url: 'https://'+ tw_url
+          url: 'https://twitter.com/'+ tweet.user.screen_name +'/status/'+ tweet.id_str
         });
       }));
     }

@@ -1,0 +1,8 @@
+{
+  "twit": {
+    "access_token": "youraccess_token",
+    "access_secret": "youraccess_secret",
+    "consumer_key": "yourconsumer_key",
+    "consumer_secret": "yourconsumer_secret"
+  }
+}

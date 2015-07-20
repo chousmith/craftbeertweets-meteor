@@ -1,0 +1,12 @@
+<!-- feed-list.ng.html -->
+<div class="container">
+  <header>
+    <h1>#craftbeer tweets</h1>
+  </header>
+
+  <ul ng-repeat="tweet in tweets">
+    <li>
+      <span class="text"><strong>{{tweet.user_name}}</strong> <small>@{{tweet.screen_name}}</small> &middot; <small am-time-ago="tweet.created_at" ng-attr-title="{{tweet.created_at}}"></small><br />{{tweet.text}}</span>
+    </li>
+  </ul>
+</div>

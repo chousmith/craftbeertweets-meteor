@@ -11,28 +11,28 @@ View the example progress at http://craftbeertweets.meteor.com/
 
 tweet data is currently stored as
 
-`Tweets.insert({
-  user_id: tweet.user.id_str,
-  user_name: tweet.user.name,
-  screen_name: tweet.user.screen_name,
-  text: tweet.text,
-  created_at: tweet.created_at,
-  img: img,
-  origin_id: tweet.id_str,
-  url: 'https://twitter.com/'+ tweet.user.screen_name +'/status/'+ tweet.id_str
-});`
+    Tweets.insert({
+      user_id: tweet.user.id_str,
+      user_name: tweet.user.name,
+      screen_name: tweet.user.screen_name,
+      text: tweet.text,
+      created_at: tweet.created_at,
+      img: img,
+      origin_id: tweet.id_str,
+      url: 'https://twitter.com/'+ tweet.user.screen_name +'/status/'+ tweet.id_str
+    });
 
 ### hashtags
 
 Not currently stored, but that could be nice? Hashtags do come in on the tweet.entities like
 
-`var hashtags = [];
-if ( tweet.entities.hasOwnProperty('hashtags') ) {
-  if ( tweet.entities.hashtags.length > 0 ) {
-    hashtags = tweet.entities.hashtags;
-    // like [{ text: 'craftbeer', indices: [ 51, 61 ] },...]
-  }
-}`
+    var hashtags = [];
+    if ( tweet.entities.hasOwnProperty('hashtags') ) {
+      if ( tweet.entities.hashtags.length > 0 ) {
+        hashtags = tweet.entities.hashtags;
+        // like [{ text: 'craftbeer', indices: [ 51, 61 ] },...]
+      }
+    }
 
 ### moment.js
 
@@ -42,22 +42,22 @@ Oh also using moment via
 
 and the a simple
 
-`<small am-time-ago="tweet.created_at" ng-attr-title="{{tweet.created_at}}"></small>`
+    <small am-time-ago="tweet.created_at" ng-attr-title="{{tweet.created_at}}"></small>
 
 which, like every other piece of this, could possibly be simplified and streamlined even a lot more than it already is?
 
 ## installation
 
-First, you should copy the settings-example.json and replace the values with the keys from your Twitter app API keys :
+First, you should copy the settings-example.json and replace the values with the keys from your Twitter app keys :
 
-`{
-  "twit": {
-    "access_token": "youraccess_token",
-    "access_secret": "youraccess_secret",
-    "consumer_key": "yourconsumer_key",
-    "consumer_secret": "yourconsumer_secret"
-  }
-}`
+    {
+      "twit": {
+        "access_token": "youraccess_token",
+        "access_token_secret": "youraccess_secret",
+        "consumer_key": "yourconsumer_key",
+        "consumer_secret": "yourconsumer_secret"
+      }
+    }
 
 To run locally, after you have installed Meteor itself, download this someplace, cd to this root directory, copy the settings-example.json above to a settings.json using your actual Twitter app API keys, then
 

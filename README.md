@@ -86,11 +86,18 @@ in not much of any particular order
 * link the links
 * save the location of the tweets if there was one provided
 * do like twitter & rather than auto refreshing with the one at the top, update a counter with the unshown # until user chooses to show
+* expire tweets after some time, too?
+* better display (bootstrap?)
+* log in with your own twitter & ability to do some things?
 * google maps?!
-* expire tweets after some time?
+* hashtag popularity charts?!?
 * and then?
 
 ## changelog
+
+### 0.1.3
+
+* remove old meteor add account-password & account-ui since there is no account stuff at least not right now
 
 ### 0.1.2
 

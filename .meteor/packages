@@ -6,8 +6,6 @@
 
 meteor-platform
 urigo:angular
-accounts-ui
-accounts-password
 momentjs:moment
 jasonaibrahim:angular-moment
 mrt:twit

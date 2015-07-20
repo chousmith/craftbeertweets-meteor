@@ -1,4 +1,4 @@
-# craftbeertweets-angular
+# craftbeertweets-meteor
 Example of using Twitter Streaming API node.js twit with meteor.js via https://atmospherejs.com/mrt/twit > https://github.com/ttezel/twit to stream filter Tweets containing "craftbeer" :
 
 `.stream('statuses/filter', { track: 'craftbeer' })`

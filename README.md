@@ -5,7 +5,9 @@ Example of using Twitter Streaming API node.js twit with meteor.js via https://a
 
 Connects to Twitter's Streaming API, storing resulting tweets in a "Tweets" MongoDB collection, which then get published / sent to the client side.
 
-Tweets data is currently stored via
+View the example progress at http://craftbeertweets.meteor.com/
+
+Tweets data is currently stored as
 
 `Tweets.insert({
   user_id: tweet.user.id_str,
@@ -18,7 +20,7 @@ Tweets data is currently stored via
   url: 'https://twitter.com/'+ tweet.user.screen_name +'/status/'+ tweet.id_str
 });`
 
-Not currently storing hashtags, but that would be nice? Hashtags come in on the tweet.entities so like
+Not currently using hashtags, but that would be nice? Hashtags come in on the tweet.entities like
 
 `var hashtags = [];
 if ( tweet.entities.hasOwnProperty('hashtags') ) {

@@ -7,7 +7,9 @@ Connects to Twitter's Streaming API, storing resulting tweets in a "Tweets" Mong
 
 View the example progress at http://craftbeertweets.meteor.com/
 
-Tweets data is currently stored as
+### tweet
+
+tweet data is currently stored as
 
 `Tweets.insert({
   user_id: tweet.user.id_str,
@@ -20,7 +22,9 @@ Tweets data is currently stored as
   url: 'https://twitter.com/'+ tweet.user.screen_name +'/status/'+ tweet.id_str
 });`
 
-Not currently using hashtags, but that would be nice? Hashtags come in on the tweet.entities like
+### hashtags
+
+Not currently stored, but that could be nice? Hashtags do come in on the tweet.entities like
 
 `var hashtags = [];
 if ( tweet.entities.hasOwnProperty('hashtags') ) {
@@ -29,6 +33,18 @@ if ( tweet.entities.hasOwnProperty('hashtags') ) {
     // like [{ text: 'craftbeer', indices: [ 51, 61 ] },...]
   }
 }`
+
+### moment.js
+
+Oh also using moment via 
+
+`meteor add jasonaibrahim:angular-moment`
+
+and the a simple
+
+`<small am-time-ago="tweet.created_at" ng-attr-title="{{tweet.created_at}}"></small>`
+
+which, like every other piece of this, could possibly be simplified and streamlined even a lot more than it already is?
 
 ## installation
 
@@ -75,6 +91,14 @@ in not much of any particular order
 * and then?
 
 ## changelog
+
+### 0.1.2
+
+* limit results to a max of the 10 most recent tweets from the server / db?
+
+### 0.1.1
+
+* more documentation and cleanup
 
 ### 0.1
 

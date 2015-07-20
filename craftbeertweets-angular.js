@@ -1,7 +1,7 @@
 /**
  * craftbeertweets-angular Meteor app
  *
- * v0.1
+ * v0.1.2
  */
 
 Tweets = new Mongo.Collection("tweets");
@@ -79,12 +79,8 @@ if (Meteor.isServer) {
       }));
     }
   });
+  // what does this even do?!
   Meteor.publish("tweets", function () {
-    return Tweets.find({
-      $or: [
-        { private: {$ne: true} },
-        { owner: this.userId }
-      ]
-    });
+    return Tweets.find({}, { sort: { created_at: -1 }, limit: 10 });
   });
 }

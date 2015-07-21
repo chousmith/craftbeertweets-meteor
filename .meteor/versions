@@ -7,6 +7,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+datariot:ganalytics@0.2.1
 dburles:mongo-collection-instances@0.3.4
 ddp@1.1.0
 deps@1.0.7
@@ -33,7 +34,6 @@ momentjs:moment@2.10.3
 mongo@1.1.0
 mrt:twit@0.2.0
 observe-sequence@1.0.6
-okgrow:analytics@0.3.0
 ordered-dict@1.0.3
 random@1.0.3
 reactive-dict@1.1.0

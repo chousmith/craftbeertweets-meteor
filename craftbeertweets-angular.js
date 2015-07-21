@@ -7,6 +7,9 @@
 Tweets = new Mongo.Collection("tweets");
 
 if (Meteor.isClient) {
+  // first track pageview manually? at least just 1 page for meow
+  GAnalytics.pageview("/home");
+  
 	angular.module("craftbeertweets", ['angular-meteor', 'angularMoment']);
 
 	angular.module("craftbeertweets").controller("CraftBeerTweetsCtrl", ['$scope', '$window', '$meteor',

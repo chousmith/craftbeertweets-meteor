@@ -95,6 +95,10 @@ in not much of any particular order
 
 ## changelog
 
+### 0.1.4
+
+* an attempt at adding analytics via `meteor add datariot:ganalytics`
+
 ### 0.1.3
 
 * remove old meteor add account-password & account-ui since there is no account stuff at least not right now

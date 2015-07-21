@@ -1,7 +1,7 @@
 /**
  * craftbeertweets-angular Meteor app
  *
- * v0.1.3
+ * v0.1.4
  */
 
 Tweets = new Mongo.Collection("tweets");

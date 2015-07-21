@@ -97,7 +97,7 @@ in not much of any particular order
 
 ### 0.1.4
 
-* an attempt at adding analytics via `meteor add datariot:ganalytics`
+* an attempt at adding analytics?
 
 ### 0.1.3
 

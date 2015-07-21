@@ -8,7 +8,10 @@ Tweets = new Mongo.Collection("tweets");
 
 if (Meteor.isClient) {
   // first track pageview manually? at least just 1 page for meow
-  GAnalytics.pageview("/home");
+  if (Meteor.settings.public.GaTrackingId) {
+    ga('create', Meteor.settings.public.GaTrackingId, 'auto');
+    ga('send', 'pageview');
+  }
   
 	angular.module("craftbeertweets", ['angular-meteor', 'angularMoment']);
 

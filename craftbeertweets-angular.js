@@ -7,12 +7,13 @@
 Tweets = new Mongo.Collection("tweets");
 
 if (Meteor.isClient) {
+  /*
   // first track pageview manually? at least just 1 page for meow
   if (Meteor.settings.public.GaTrackingId) {
     ga('create', Meteor.settings.public.GaTrackingId, 'auto');
     ga('send', 'pageview');
   }
-  
+  */
 	angular.module("craftbeertweets", ['angular-meteor', 'angularMoment']);
 
 	angular.module("craftbeertweets").controller("CraftBeerTweetsCtrl", ['$scope', '$window', '$meteor',
@@ -55,8 +56,9 @@ if (Meteor.isServer) {
     } else {
       Twit = new TwitMaker( Meteor.settings.twit );
       //  for example, twitter public stream track 'craftbeer'
+      console.log( 'Setting up new statuses/filter api call for craftbeer..' );
       var stream = Twit.stream('statuses/filter', { track: 'craftbeer' })
-
+      
       stream.on('tweet', Meteor.bindEnvironment( function(tweet) {
         var img = '';
         // check if tweet has media
